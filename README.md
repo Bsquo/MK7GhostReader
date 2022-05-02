@@ -1,5 +1,5 @@
 # MK7GhostReader
-Originally script by [willsigg](https://github.com/willsigg/MK7GhostReader).
+Original script by [willsigg](https://github.com/willsigg/MK7GhostReader).
 
 This script will read and print out info about Mario Kart 7 ghosts. You can also feel free to use/edit/include it to your own liking, as it includes a class for all the metadata.
 
