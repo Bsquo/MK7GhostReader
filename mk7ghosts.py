@@ -61,8 +61,11 @@ class MK7Ghost:
 		#self.region_coordinates.reverse()
 		self.crc32 = ba(data[0x2898:0x289C])
 
-		self.first_person = bool((ghost_file[0x07] << 4) >> 7)
-		self.courseLapType = self.parseCourseLapType((ghost_file[0x07] << 5) >> 5)
+		course_lap_type_and_first_person_byte = ghost_file[0x07:0x08]
+		course_lap_type_and_first_person_byte.reverse()
+		course_lap_type_and_first_person_byte = ba(course_lap_type_and_first_person_byte)
+		self.first_person = course_lap_type_and_first_person_byte[4:5].bool
+		self.courseLapType = self.parseCourseLapType(course_lap_type_and_first_person_byte[5:8].uint)
 		revision_byte_array = ghost_file[0x9c:0x9f]
 		revision_byte_array.reverse()
 		self.revision = ba(revision_byte_array)
