@@ -14,5 +14,5 @@ If you have errors executing the `pip` command, you may not have it installed in
 
 ## Usage
 ```
-python mk7ghosts.py your_ghost.py
+python mk7ghosts.py your_ghost.dat
 ```
